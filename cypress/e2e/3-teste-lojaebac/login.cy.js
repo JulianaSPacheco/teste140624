@@ -33,7 +33,7 @@ describe('Funcionalidade: login', () => {
         cy.get('.woocommerce-form > .button').click() 
 
         cy.get('.woocommerce-error').should('contain', 'rro: A senha fornecida para o e-mail julianapacheco@outlook.com está incorreta. Perdeu a senha?')
-
+        cy.get('.woocommerce-error'). should('exist')
         
     });
 
