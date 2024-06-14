@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+import { faker } from '@faker-js/faker';
 
 describe('Funcionalidade: Cadastro', () => {
 
@@ -8,8 +9,11 @@ describe('Funcionalidade: Cadastro', () => {
 
     it('Completar cadastro com sucesso', () => {
 
-        
-        
+        cy.get('#reg_email').type(faker.internet.email())
+        cy.get('#reg_password').type('teste@123')
+        cy.get(':nth-child(4) > .button').click()
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist',)
+
     });
     
 });

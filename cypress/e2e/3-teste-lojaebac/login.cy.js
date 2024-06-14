@@ -32,7 +32,7 @@ describe('Funcionalidade: login', () => {
         cy.get('#username').type('julianapacheco@outlook.com')
         cy.get('#password').type('Ju123456')
         cy.get('.woocommerce-form > .button').click() 
-        cy.get('.woocommerce-error').should('contain', 'erro: A senha fornecida para o e-mail julianapacheco@outlook.com está incorreta. Perdeu a senha?')
+        cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para o e-mail julianapacheco@outlook.com está incorreta. Perdeu a senha?')
         cy.get('.woocommerce-error'). should('exist')
         
     });
