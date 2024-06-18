@@ -1,9 +1,10 @@
 /// <reference types="cypress"/>
+const perfil = require('../../fixtures/perfil.json')
 
 describe('Funcionalidade: login', () => {
 
     beforeEach(() => { 
-        cy.visit('http://lojaebac.ebaconline.art.br/my-account/') 
+        cy.visit('my-account') 
     });
 
     afterEach(() => { 
@@ -16,7 +17,6 @@ describe('Funcionalidade: login', () => {
         cy.get('#password').type('Ju123456!@')
         cy.get('.woocommerce-form > .button').click()
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, julianapacheco (não é julianapacheco? Sair)')
-
     })
 
     it('Deve exibir msg de erro com usuário inválido', () => {
@@ -24,8 +24,6 @@ describe('Funcionalidade: login', () => {
         cy.get('#password').type('Ju123456!@')
         cy.get('.woocommerce-form > .button').click() 
         cy.get('.woocommerce-error').should('contain', 'Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.')
-
-        
     });
 
     it('Deve exibir msg de erro com senha inválida', () => {
@@ -34,8 +32,23 @@ describe('Funcionalidade: login', () => {
         cy.get('.woocommerce-form > .button').click() 
         cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para o e-mail julianapacheco@outlook.com está incorreta. Perdeu a senha?')
         cy.get('.woocommerce-error'). should('exist')
-        
     });
 
-})
+    it('Login com sucesso - Através de massa de dados', () => {
+        cy.get('#username').type(perfil.usuario)
+        cy.get('#password').type(perfil.senha)
+        cy.get('.woocommerce-form > .button').click()
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, julianapacheco (não é julianapacheco? Sair)')
+    });
 
+    it.only('Login com sucesso - Fixture', () => {
+        cy.fixture('perfil').then( dados => {
+            cy.get('#username').type(dados.usuario, {log: false})
+            cy.get('#password').type(dados.senha, {log: false})
+            cy.get('.woocommerce-form > .button').click()
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, julianapacheco (não é julianapacheco? Sair)')   
+
+        })
+    });
+
+});
