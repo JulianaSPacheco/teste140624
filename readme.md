@@ -10,5 +10,9 @@ Novo teste de login loja ebac 140624 16:22/
 
 Novo teste de login loja ebac 140624 16:35/
 
+Atualização cadastro com variavel 180624 15:00/
+
+
+
 
 
