@@ -41,7 +41,7 @@ describe('Funcionalidade: login', () => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, julianapacheco (não é julianapacheco? Sair)')
     });
 
-    it.only('Login com sucesso - Fixture', () => {
+    it('Login com sucesso - Fixture', () => {
         cy.fixture('perfil').then( dados => {
             cy.get('#username').type(dados.usuario, {log: false})
             cy.get('#password').type(dados.senha, {log: false})
@@ -49,6 +49,12 @@ describe('Funcionalidade: login', () => {
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, julianapacheco (não é julianapacheco? Sair)')   
 
         })
+    });
+
+
+    it.only('login com sucesso - Customizado', () => {
+        cy.login('julianapacheco@outlook.com', 'Ju123456!@')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, julianapacheco (não é julianapacheco? Sair)')
     });
 
 });

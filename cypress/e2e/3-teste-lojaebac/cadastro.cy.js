@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+const perfil = require('../../fixtures/perfil.json')
 import { faker } from '@faker-js/faker';
 
 describe('Funcionalidade: Cadastro', () => {
@@ -35,5 +36,15 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.woocommerce-Button').click()
         cy.get('.woocommerce-message').should('contain','Detalhes da conta modificados com sucesso.')
     });
+
+
+    it.only('Cadastro com sucesso - Customizado', () => {
+        cy.preCadastro(faker.internet.email(), 'teste@123', faker.person.firstName(), faker.person.lastName())
+        cy.get('.woocommerce-message').should('contain','Detalhes da conta modificados com sucesso.')
+    
+    });    
+
+
+
 
 });

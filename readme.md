@@ -14,6 +14,8 @@ Atualização cadastro com variavel 180624 15:00/
 
 Atualização otimizar 180624 16:25/
 
+Atualizaçao Comandos Customizados 190624 11:00/
+
 
 
 
