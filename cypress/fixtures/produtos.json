@@ -1,0 +1,23 @@
+[
+	{
+		"nomeProduto": "Arcadio Gym Short",
+		"tamanho": "33",
+		"cor": "Red",
+		"quantidade": 3
+	},
+
+    {
+		"nomeProduto": "Ajax Full-Zip Sweatshirt",
+		"tamanho": "M",
+		"cor": "Blue",
+		"quantidade": 2
+	},
+
+	{
+		"nomeProduto": "Aether Gym Pant",
+		"tamanho": "32",
+		"cor": "Blue",
+		"quantidade": 5
+	}
+    
+]

@@ -16,6 +16,8 @@ Atualização otimizar 180624 16:25/
 
 Atualizaçao Comandos Customizados 190624 11:00/
 
+Atualização Massa de dados em lista 010724 21:45/
+
 
 
 
