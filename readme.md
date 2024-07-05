@@ -18,6 +18,8 @@ Atualizaçao Comandos Customizados 190624 11:00/
 
 Atualização Massa de dados em lista 010724 21:45/
 
+Importado pasta + arquivo do git para o local. 
+
 
 
 
